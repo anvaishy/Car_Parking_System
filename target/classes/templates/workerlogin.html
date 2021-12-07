@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" th:href="@{/css/userlogin.css}">
+<meta charset="ISO-8859-1">
+<title>worker Login Page</title>
+</head>
+<body>
+	<br>
+	<br>
+	<h1 align="center" style="color:white;"class = "kevin" >Park<img align="center" src="../img/download.svg" style="width:75px;height:75px;"></img>Royale</h1>
+		<div class = "row" align="center">
+				<h1> Worker Login Page </h1>
+				<form name="login" align="center">
+            		Username<br> 
+            		<input type="text" name="userid"/>
+            		<br>
+		            Password<br>
+        		    <input type="password" name="pswrd"/>
+            		<br>
+            		<br>
+            		<input type="button" onclick="check(this.form)" value="Login"/>
+		            <br>
+
+        		</form>
+        	<br>
+			<div class="form-group">
+			<span>Are you the Admin?<a href="/adminlogin" >to admin login</a></span>
+			</div>
+			<br>
+			<button class="gwen1" onclick="window.location.href='/'">Back</button>
+			</div>
+			<script language="javascript">
+            function check(form) { 
+                if(form.userid.value == "worker@gmail.com" && form.pswrd.value == "worker") {
+                    window.open('/workerdashboard',"_self")
+                }
+                else if(form.userid.value == "worker1@gmail.com" && form.pswrd.value == "worker"){
+                	 window.open('/workerdashboard',"_self")
+                }
+                else if(form.userid.value == "worker2@gmail.com" && form.pswrd.value == "worker"){
+               	 window.open('/workerdashboard',"_self")
+               }
+                else if(form.userid.value == "worker3@gmail.com" && form.pswrd.value == "worker"){
+               	 window.open('/workerdashboard',"_self")
+               }
+                else {
+                    alert("Error Password or Username")
+                }
+            }
+        </script>
+</body>
+</html>

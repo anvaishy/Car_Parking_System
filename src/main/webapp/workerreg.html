@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>worker registration</title>
+</head>
+<body>
+
+<br>
+<br>
+	<!-- Create HTML registration form -->
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				<div th:if="${param.success}">
+					<div class="alert alert-info">You've successfully registered
+						to our awesome app!</div>
+				</div>
+				<h1>Registration</h1>
+				<form th:action="@{/workerregistration}" method="post" th:object="${worker}">
+					<div class="form-group">
+						<label class="control-label" for="workerName"> Worker Name </label>
+						<input id="workerName" class="form-control" th:field="*{workerName}"
+							required autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" th:field="*{email}" required
+							autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="password"> Password </label> <input
+							id="password" class="form-control" type="password"
+							th:field="*{password}" required autofocus="autofocus" />
+					</div>
+					<br>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Register</button>
+						<br>
+						<span>Already registered? <a href="/" th:href="@{/workerdashboard}">Login
+								here</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
